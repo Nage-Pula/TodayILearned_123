@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../../../frontend_udemy/HTML"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"git.ignoreLimitWarning": true
+	}
+}

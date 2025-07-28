@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Society Facts</title>
+    <link rel="stylesheet" href="tl_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Coiny&family=Quicksand:wght@300..600&family=Sono:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <img src="tl_logo.png" alt="logo" height="50" width="50" />
+          <h1>Society Facts</h1>
+        </div>
+        <button class="btn btn-large btn-open">Share a Fact</button>
+        <button class="btn btn-large btn-logout" onclick="logoutUser()">
+          Logout
+        </button>
+      </header>
+      <h2 id="greeting" style="text-align: center; margin-bottom: 1rem"></h2>
+      <!--Greetings-->
+
+      <main class="main">
+        <form class="fact-form hidden">
+          <input type="text" placeholder="Share a fact with the world..." />
+          <span>200</span>
+          <input type="text" placeholder="Trust Worthy source..." />
+        </form>
+        <!-- Use same navigation buttons as above -->
+        <aside class="sidebar">
+          <ul>
+            <li class="category">
+              <button
+                class="btn btn-all-categories"
+                onclick="location.href='tl_index.html'"
+              >
+                All
+              </button>
+            </li>
+            <li class="category">
+              <button
+                class="btn btn-category"
+                style="background-color: rgb(55, 20, 210)"
+                onclick="location.href='tl_technology.html'"
+              >
+                Technology
+              </button>
+            </li>
+            <li class="category">
+              <button
+                class="btn btn-category"
+                style="background-color: #16a34a"
+                onclick="location.href='tl_science.html'"
+              >
+                Science
+              </button>
+            </li>
+            <li class="category">
+              <button
+                class="btn btn-category"
+                style="background-color: #ac204c"
+                onclick="location.href='tl_finance.html'"
+              >
+                Finance
+              </button>
+            </li>
+            <li class="category">
+              <button
+                class="btn btn-category"
+                style="background-color: #c4b000"
+                onclick="location.href='tl_society.html'"
+              >
+                Society
+              </button>
+            </li>
+          </ul>
+        </aside>
+
+        <section>
+          <ul id="fact-list"></ul>
+        </section>
+      </main>
+
+      <footer>
+        <p class="footer-text"><strong> Built by Nageswara Rao Pula</strong></p>
+      </footer>
+    </div>
+    <!--ADDED GAINSIGHT PX TAG START-->
+    <script src="tl_data.js"></script>
+    <script src="tl_script.js"></script>
+    <script src="tl_tech_script.js"></script>
+    <script src="PX_tag_TIL.js"></script>    
+    <!--ADDED GAINSIGHT PX TAG END-->
+  </body>
+</html>

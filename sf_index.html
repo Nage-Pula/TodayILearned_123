@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="sf_style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="banner">
+          <h1>Hello, Friend..!</h1>
+          <p>Enter Personal Details and start your journey with us!</p>
+        </div>
+        <div class="green-bg">
+          <h2>Welcome to Our Site</h2>
+          <button type="button">Sign Up</button>
+        </div>
+        <form class="signup-form">
+          <h1>Create Account</h1>
+          <div class="social-media">
+            <i class="fab fa-facebook-f">
+              <a href="https://www.facebook.com/" target="_blank"></a
+            ></i>
+            <i class="fab fa-twitter">
+              <a href="https://twitter.com/" target="_blank"></a
+            ></i>
+            <i class="fab fa-linkedin-in">
+              <a href="https://www.linkedin.com/" target="_blank"></a
+            ></i>
+            <i class="fab fa-whatsapp">
+              <a href="https://www.whatsapp.com/" target="_blank"></a
+            ></i>
+            <i class="fab fa-instagram">
+              <a href="https://www.instagram.com/" target="_blank"></a
+            ></i>
+          </div>
+          <p>or use your email for registration</p>
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="username" placeholder="User Name" required />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input
+              type="
+                    email"
+              id="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input
+              type="
+                    password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button id="signupBtn" type="button">Sign Up</button>
+<div class="input-group">
+            <button id="countPageViewBtn" type="button">Count Page View</button>
+            <span id="pageViewCount" style="margin-left:10px;">0</span>
+          </div>
+          <script>
+
+                const nowdate = new Date();
+                const ISTdate = new Date(nowdate.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
+                const Cpad = n => n.toString().padStart(2, '0');
+                const istHHMMSS = `${Cpad(ISTdate.getHours())}${Cpad(ISTdate.getMinutes())}${Cpad(ISTdate.getSeconds())}`;
+                const istDDMMYY = `${Cpad(ISTdate.getDate())}${Cpad(ISTdate.getMonth() + 1)}${ISTdate.getFullYear().toString().slice(-2)}`;
+            
+            const countBtn = document.getElementById('countPageViewBtn');
+            const countSpan = document.getElementById('pageViewCount');
+
+            let count = localStorage.getItem('pageViewCount') || 0;
+            countSpan.textContent = count;
+
+            countBtn.addEventListener('click', () => {
+              count = Number(count) + 1;
+              localStorage.setItem('pageViewCount', count);
+              countSpan.textContent = count;
+            
+            aptrinsic("identify",
+        {
+          "id": user.email+"countBtn - ",//+istHHMMSS, // unique session-based ID
+          "email": user.email+istHHMMSS+"@guest.com",
+          "firstName": user.email+"CountButton"+istHHMMSS,
+          "lastName": user.email+"CbtnLname"+istDDMMYY,
+          //"buttonCount": null,
+          "click1":"Clicked on Button -- "+count,
+        },
+        {
+          "id": "Clicks on  Count Page Btn", // unique session-based account ID
+          "name": "Count Page View Button Click"+istHHMMSS,
+        });
+        });
+          </script>
+
+        </form>
+      </div>
+    </div>
+        <!--ADDED GAINSIGHT PX TAG START-->
+    <script src="tl_data.js"></script>
+    <script src="sf_script.js"></script>
+    <script src="tl_script.js"></script>
+    <script src="PX_tag_TIL.js"></script>    
+    <!--ADDED GAINSIGHT PX TAG END-->
+  </body>
+</html>
