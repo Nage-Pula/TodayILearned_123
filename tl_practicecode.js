@@ -95,7 +95,7 @@ function logoutUser() {
   alert("You have been logged out successfully!");
 
   // Redirect to the sign-up page
-  window.location.href = "sf_index.html";
+  window.location.href = "index.html";
 }
 
 // Display current user and Guard access
@@ -106,7 +106,7 @@ if (!currentUser || !currentUser.username) {
   // If no user is logged in, show a generic greeting
 
   // Optionally, you can redirect to the sign-up page
-  window.location.href = "sf_index.html";
+  window.location.href = "index.html";
 } else {
   greeting.textContent = `Welcome, ${currentUser.username}! 🎉`;
   // If a user is logged in, show a personalized greeting

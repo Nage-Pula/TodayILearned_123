@@ -1,114 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Signup Portal</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="sf_style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    header {
-      background: #0077cc;
-      color: white;
-      padding: 1rem;
-      width: 100%;
-      text-align: center;
-    }
+  <body>
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="banner">
+          <h1>Hello, Friend..!</h1>
+          <p>Enter Personal Details and start your journey with us!</p>
+        </div>
+        <div class="green-bg">
+          <h2>Welcome to Our Site</h2>
+          <button type="button">Sign Up</button>
+        </div>
+        <form class="signup-form">
+          <h1>Create Account</h1>
+          <div class="social-media">
+            <i class="fab fa-facebook-f">
+              <a href="https://www.facebook.com/" target="_blank"></a
+            ></i>
+            <i class="fab fa-twitter">
+              <a href="https://twitter.com/" target="_blank"></a
+            ></i>
+            <i class="fab fa-linkedin-in">
+              <a href="https://www.linkedin.com/" target="_blank"></a
+            ></i>
+            <i class="fab fa-whatsapp">
+              <a href="https://www.whatsapp.com/" target="_blank"></a
+            ></i>
+            <i class="fab fa-instagram">
+              <a href="https://www.instagram.com/" target="_blank"></a
+            ></i>
+          </div>
+          <p>or use your email for registration</p>
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="username" placeholder="User Name" required />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input
+              type="
+                    email"
+              id="email"
+              placeholder="Email"
+              required
+            />
+          </div>
 
-    nav {
-      background: #005fa3;
-      width: 100%;
-      padding: 0.5rem;
-      text-align: center;
-      color: white;
-    }
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input
+              type="
+                    password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button id="signupBtn" type="button">Sign Up</button>
+<div class="input-group">
+            <button id="countPageViewBtn" type="button">Count Page View</button>
+            <span id="pageViewCount" style="margin-left:10px;">0</span>
+          </div>
+          <script>
 
-    .iframe-container {
-      position: relative;
-      width: 100%;
-      max-width: 500px;
-      height: 500px;
-      margin-top: 2rem;
-      border: 2px solid #ccc;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-    }
+                const nowdate = new Date();
+                const ISTdate = new Date(nowdate.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
+                const Cpad = n => n.toString().padStart(2, '0');
+                const istHHMMSS = `${Cpad(ISTdate.getHours())}${Cpad(ISTdate.getMinutes())}${Cpad(ISTdate.getSeconds())}`;
+                const istDDMMYY = `${Cpad(ISTdate.getDate())}${Cpad(ISTdate.getMonth() + 1)}${ISTdate.getFullYear().toString().slice(-2)}`;
+            
+            const countBtn = document.getElementById('countPageViewBtn');
+            const countSpan = document.getElementById('pageViewCount');
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+            let count = localStorage.getItem('pageViewCount') || 0;
+            countSpan.textContent = count;
 
-    .spinner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-    }
+            countBtn.addEventListener('click', () => {
+              count = Number(count) + 1;
+              localStorage.setItem('pageViewCount', count);
+              countSpan.textContent = count;
+            
+            aptrinsic("identify",
+        {
+          "id": user.email+"countBtn - ",//+istHHMMSS, // unique session-based ID
+          "email": user.email+istHHMMSS+"@guest.com",
+          "firstName": user.email+"CountButton"+istHHMMSS,
+          "lastName": user.email+"CbtnLname"+istDDMMYY,
+          //"buttonCount": null,
+          "click1":"Clicked on Button -- "+count,
+        },
+        {
+          "id": "Clicks on  Count Page Btn", // unique session-based account ID
+          "name": "Count Page View Button Click"+istHHMMSS,
+        });
+        });
+          </script>
 
-    .spinner.hidden {
-      display: none;
-    }
-
-    @media (max-width: 600px) {
-      .iframe-container {
-        height: 400px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header><h1>Welcome to Our Site</h1></header>
-  <nav>Home | About | Contact</nav>
-
-  <div class="iframe-container">
-    <div class="spinner" id="loader">Loading...</div>
-    <iframe src="signup.html" id="signupFrame"></iframe>
-  </div>
-
-  <script>
-    // const iframe = document.getElementById('signupFrame');
-    // const loader = document.getElementById('loader');
-
-    // iframe.onload = () => {
-    //   loader.classList.add('hidden');
-    // };
-
-    // window.addEventListener("message", (event) => {
-    //   if (event.origin !== window.location.origin) return;
-
-    //   const { type, data } = event.data;
-
-    //   if (type === "signupSuccess") {
-    //     alert("Signup completed! 🎉 Redirecting...");
-    //   }
-    // });
-  const iframe = document.getElementById('signupFrame');
-  const loader = document.getElementById('loader');
-
-  iframe.onload = () => {
-    loader.classList.add('hidden');
-  };
-
-  window.addEventListener("message", (event) => {
-    if (event.origin !== window.location.origin) return;
-
-    const { type } = event.data;
-
-    if (type === "signupSuccess") {
-      window.location.href = "welcome.html"; // full page redirect
-    }
-  });
-
-
-  </script>
-</body>
+        </form>
+      </div>
+    </div>
+        <!--ADDED GAINSIGHT PX TAG START-->
+    <script src="tl_data.js"></script>
+    <script src="sf_script.js"></script>
+    <script src="tl_script.js"></script>
+    <script src="PX_tag_TIL.js"></script>    
+    <!--ADDED GAINSIGHT PX TAG END-->
+  </body>
 </html>

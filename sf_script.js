@@ -2,7 +2,7 @@ const container = document.querySelector(".container");
 const signUpBtn = document.querySelector(".green-bg button");
 
 window.addEventListener("DOMContentLoaded", () => {
-  const isSignupPage = window.location.pathname.includes("sf_index");
+  const isSignupPage = window.location.pathname.includes("index");
 signUpBtn.addEventListener("click", () => {
   container.classList.toggle("change");
 });

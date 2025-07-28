@@ -26,14 +26,14 @@ document.getElementById('btn').addEventListener("click", function () { /**------
 /*const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 if (!currentUser || !currentUser.username) {
   greeting.textContent = `Welcome, ${currentUser.username}! 🎉`;
-  window.location.href = "sf_index.html";
+  window.location.href = "index.html";
 } else {
   greeting.textContent = `Welcome, ${currentUser.username}! 🎉`;
 }   });  
 function logoutUser() {       /*------REQU_2S-------*/
  /* localStorage.removeItem("currentUser");  
   alert("You have been logged out successfully!");
-  window.location.href = "sf_index.html";
+  window.location.href = "ndex.html";
   aptrinsic('reset');
 }    */                                 /**------OPTIONAL+REQU_3E-------*/
 
@@ -58,7 +58,7 @@ const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   }
   // ✅ Guard if user not logged in
   //  if (!currentUser || !currentUser.username) {
-  //   window.location.href = "sf_index.html"; // redirect to login
+  //   window.location.href = "ndex.html"; // redirect to login
   //   return;
   //  }
 
@@ -87,7 +87,7 @@ function logoutUser() {
   aptrinsic('reset'); // PX logout
   localStorage.removeItem("currentUser");
   alert("You have been logged out successfully!");
-  window.location.href = "sf_index.html";
+  window.location.href = "index.html";
 }
 
 function buttonClicked() {

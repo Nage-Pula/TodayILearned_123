@@ -1,7 +1,7 @@
 /*currentUser = JSON.parse(localStorage.getItem("currentUser"));
 greeting = document.getElementById("greeting");
 if (!currentUser || !currentUser.username) {
-  window.location.href = "sf_index.html";
+  window.location.href = "index.html";
 } else {
   greeting.textContent = `Welcome, ${currentUser.username}! 🎉`;
 }
